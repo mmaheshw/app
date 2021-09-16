@@ -19,7 +19,7 @@ def gm(data='Humidity'):
     df = pd.read_csv("./data/df.csv")
     df = df.assign(metric = df[data])
 
-    fig = px.line(df.assign(metric=df[data]), x="Time", y='metric')
+    fig = px.line(df.assign(metric=df[data]), x="DateTime", y='metric')
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     
